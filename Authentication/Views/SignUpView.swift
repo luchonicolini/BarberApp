@@ -14,30 +14,32 @@ private enum FocusableField: Hashable {
     case confirmPassword
 }
 
-
 struct SignupView: View {
     @EnvironmentObject var viewModel: AuthenticationViewModel
     @Environment(\.dismiss) var dismiss
     
     @FocusState private var focus: FocusableField?
+    @State private var registrationSuccessful = false
     
     private func signUpWithEmailPassword() {
         Task {
-            viewModel.signUpWithEmailPassword()
-            await viewModel.sendEmailVerification()
-            
+            viewModel.register { success in
+                if success {
+                    registrationSuccessful = true
+                }
+            }
         }
     }
     
     var body: some View {
         NavigationStack {
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 VStack {
                     Image("logo1")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(minHeight: 300, maxHeight: 400)
-                    Text("Registrarse")
+                    Text("Sign up")
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -52,6 +54,7 @@ struct SignupView: View {
                             .onSubmit {
                                 self.focus = .password
                             }
+                            .accessibilityLabel("Email") // Etiqueta de accesibilidad
                     }
                     .padding(.vertical, 6)
                     .background(Divider(), alignment: .bottom)
@@ -65,6 +68,7 @@ struct SignupView: View {
                             .onSubmit {
                                 self.focus = .confirmPassword
                             }
+                            .accessibilityLabel("Contraseña") // Etiqueta de accesibilidad
                     }
                     .padding(.vertical, 6)
                     .background(Divider(), alignment: .bottom)
@@ -78,10 +82,12 @@ struct SignupView: View {
                             .onSubmit {
                                 signUpWithEmailPassword()
                             }
+                            .accessibilityLabel("Confirmar contraseña") // Etiqueta de accesibilidad
                     }
                     .padding(.vertical, 6)
                     .background(Divider(), alignment: .bottom)
                     .padding(.bottom, 8)
+                    
                     
                     if !viewModel.errorMessage.isEmpty {
                         VStack {
@@ -93,10 +99,11 @@ struct SignupView: View {
                     
                     Button(action: signUpWithEmailPassword) {
                         if viewModel.authenticationState != .authenticating {
-                            Text("Registrarse")
+                            Text("Sign up")
                                 .padding(.vertical, 8)
                                 .frame(maxWidth: .infinity)
-                        } else {
+                        }
+                        else {
                             ProgressView()
                                 .progressViewStyle(CircularProgressViewStyle(tint: .white))
                                 .padding(.vertical, 8)
@@ -106,51 +113,49 @@ struct SignupView: View {
                     .disabled(!viewModel.isValid)
                     .frame(maxWidth: .infinity)
                     .buttonStyle(.borderedProminent)
+                    .accessibilityLabel(viewModel.authenticationState != .authenticating ? "Registrarse" : "Cargando") // Etiqueta de accesibilidad
                     
                     HStack {
                         Text("¿Ya tienes una cuenta?")
+                            .multilineTextAlignment(.center)
                         NavigationLink(destination: LoginView()) {
                             Text("Iniciar sesión")
                                 .fontWeight(.semibold)
                                 .foregroundColor(.blue)
                         }
                     }
-                    .onAppear {
-                        viewModel.resetFields()
-                    }
-                    //.padding([.top, .bottom], 50)
-                    .padding(.top, 20)
-                    .padding(.bottom, 8)
-                    
+                    .padding(.vertical, 12)
+                    .frame(maxWidth: .infinity)
                 }
-                .listStyle(.plain)
-                .padding()
+                .onAppear {
+                    viewModel.reset()
+                }
             }
+            
+            .listStyle(.plain)
+            .padding()
         }
-        .alert(isPresented: $viewModel.registrationSuccessful) {
+        .alert(isPresented: $registrationSuccessful) {
             Alert(title: Text("Registro Exitoso"),
                   message: Text("Se ha enviado un correo electrónico para verificar su cuenta."),
                   dismissButton: .default(Text("Ok"), action: {
                 dismiss()
             }))
         }
-        .onReceive(viewModel.$isVerified) { isVerified in
-            if isVerified {
-                viewModel.registrationSuccessful = true
+    }
+}
+    
+    
+    
+    struct SignupView_Previews: PreviewProvider {
+        static var previews: some View {
+            Group {
+                SignupView()
+                    .preferredColorScheme(.dark)
+                    .environmentObject(AuthenticationViewModel())
             }
         }
     }
-}
-
-struct SignupView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            SignupView()
-                .preferredColorScheme(.dark)
-                .environmentObject(AuthenticationViewModel())
-        }
-    }
-}
-
-
-
+    
+    
+    

@@ -8,48 +8,61 @@
 import SwiftUI
 
 struct HomeView: View {
-    let background = Color(.white)
-   // @StateObject var authViewModel = AuthViewModel()
+    let items: [Items]
+    let colums = Array(repeating: GridItem(.flexible(), spacing: 10), count: 2)
+    
+    let background = Color("Background")
+    let spacing: CGFloat = 10
+    
+    func getViewForItem(_ item: Items) -> some View {
+        switch item.title {
+        case "Reservar":
+            return AnyView(BarberListView(barbers: Barber.sampleData))
+        case "Ubicación":
+            return AnyView(Location())
+        default:
+            return AnyView(Text("Vista no implementada"))
+        }
+    }
+
     
     var body: some View {
         NavigationStack {
-            ZStack(alignment: .topLeading) {
-                Rectangle()
-                    .fill(background)
-                    .edgesIgnoringSafeArea(.all)
-                ScrollView(.vertical, showsIndicators: false) {
-                 //   Navbar(authViewModel: authViewModel)
-                    
-                    NavigationLink(
-                        destination: BarberListView(),
-                        label: {
-                            Text("Go to Barber List")
-                                .font(.headline)
-                        })
-                    
+            ScrollView(showsIndicators: false) {
+                headerView()
+                
+                LazyVGrid(columns: colums, spacing: spacing ) {
+                    ForEach(items) { item in
+                        NavigationLink(destination: getViewForItem(item)) {
+                            ItemView(items: item)
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                    }
                 }
+                .padding(.horizontal)
+                .offset(y: -50)
             }
+            .navigationBarTitle("Jacquet’s")
+            .background(Color.white)
+            .ignoresSafeArea()
+            
         }
     }
 }
 
 
+
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(items: Items.sampleData)
     }
 }
 
 
 struct Navbar: View {
-    //@ObservedObject var authViewModel: AuthViewModel
-    
     var body: some View {
         VStack(spacing: 0) {
-            DateView(launcher: "Bienvenido")
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.top, 20)
-                .padding(.horizontal, 20)
+            
             
             Spacer()
             
@@ -60,9 +73,78 @@ struct Navbar: View {
                 .padding(.horizontal, 20)
             
             Spacer()
+            
         }
     }
 }
 
 
+struct ItemView: View {
+    let items: Items
+    var body: some View {
+        GeometryReader { reader in
+            
+            // let fontSize = min(reader.size.width * 0.2,28)
+            let imageWidth: CGFloat = min(50, reader.size.width * 0.6)
+            
+            VStack {
+                Image(items.image)
+                    .resizable()
+                    .scaledToFit()
+                    .foregroundColor(items.imgColor)
+                    .frame(width: imageWidth)
+                
+                Text(items.title)
+                    .font(.system(size: 20, weight: .bold,design: .rounded))
+                    .foregroundColor(Color.black.opacity(0.9))
+            }
+            .frame(width: reader.size.width, height: reader.size.height)
+            .background(Color.white)
+            
+        }
+        .frame(height: 150)
+        .clipShape(RoundedRectangle(cornerRadius: 20))
+        .shadow(color: Color.black.opacity(0.2), radius: 10, y: 5)
+    }
+}
+
+struct headerView: View {
+    var body: some View {
+        VStack {
+            VStack(spacing: 20) {
+           
+                Divider()
+                    .overlay(Color("Decoracion"))
+                    .frame(height: 1)
+                    .opacity(0.4)
+                    .padding(.horizontal, 20)
+           
+            }
+            .padding(.top, 90)
+            
+            Text("Servicios")
+                .font(.title)
+                .fontWeight(.bold)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal)
+            
+            
+        }
+        .frame(height: 250)
+        .frame(maxWidth: .infinity)
+        .background(Color("Background"))
+        .clipShape(CustomShape(corner: [.bottomLeft,.bottomRight], radii: 10))
+    }
+}
+
+
+struct CustomShape: Shape {
+    var corner : UIRectCorner
+    var radii : CGFloat
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corner, cornerRadii: CGSize(width: radii, height: radii))
+        
+        return Path(path.cgPath)
+    }
+}
 

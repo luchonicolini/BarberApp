@@ -8,10 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		190C4AE82A250E3E0041C299 /* BarberListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190C4AE72A250E3E0041C299 /* BarberListView.swift */; };
-		190C4AF12A25CDFC0041C299 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190C4AF02A25CDFC0041C299 /* TimeView.swift */; };
+		19188A372A675FDD002AFBC1 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19188A362A675FDD002AFBC1 /* LocationModel.swift */; };
+		1983398E2A54FA3000542E2A /* BarberDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1983398D2A54FA3000542E2A /* BarberDetailView.swift */; };
 		1986DAB72A1C9F0D00764B4E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1986DAB62A1C9F0D00764B4E /* HomeView.swift */; };
 		1986DAB92A1C9FDE00764B4E /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1986DAB82A1C9FDE00764B4E /* DateView.swift */; };
-		198F2E402A3235E100B7D1A0 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198F2E3F2A3235E100B7D1A0 /* FirebaseManager.swift */; };
+		1987CA072A603BF300AF7DC3 /* BarberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1987CA062A603BF300AF7DC3 /* BarberCell.swift */; };
+		1987CA092A60C87300AF7DC3 /* HourButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1987CA082A60C87300AF7DC3 /* HourButton.swift */; };
+		1987CA0B2A610A5600AF7DC3 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1987CA0A2A610A5600AF7DC3 /* HomeModel.swift */; };
 		198FC1ED2A1C1A43000FDF02 /* AplicacionBarberApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198FC1EC2A1C1A43000FDF02 /* AplicacionBarberApp.swift */; };
 		198FC1EF2A1C1A43000FDF02 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198FC1EE2A1C1A43000FDF02 /* ContentView.swift */; };
 		198FC1F12A1C1A46000FDF02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 198FC1F02A1C1A46000FDF02 /* Assets.xcassets */; };
@@ -22,24 +25,27 @@
 		198FC20A2A1C1FA6000FDF02 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198FC2092A1C1FA6000FDF02 /* ForgotPasswordView.swift */; };
 		198FC20C2A1C1FD6000FDF02 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198FC20B2A1C1FD6000FDF02 /* AuthenticationViewModel.swift */; };
 		19967E602A1D30E2002F9859 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19967E5F2A1D30E2002F9859 /* ListView.swift */; };
-		19967E632A1D502B002F9859 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19967E622A1D502B002F9859 /* Models.swift */; };
-		19967E652A1D5406002F9859 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19967E642A1D5406002F9859 /* CircleView.swift */; };
+		19967E632A1D502B002F9859 /* BarberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19967E622A1D502B002F9859 /* BarberModel.swift */; };
 		199B24872A2902D400A0FB55 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 199B24862A2902D400A0FB55 /* FirebaseFirestoreSwift */; };
-		19ADC09B2A1E01D9008AE946 /* CircleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ADC09A2A1E01D9008AE946 /* CircleList.swift */; };
-		19AE854A2A1C32010090DBF6 /* CustomInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AE85492A1C32010090DBF6 /* CustomInputField.swift */; };
 		19B1AA1F2A1C251400C6212C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19B1AA1E2A1C251400C6212C /* GoogleService-Info.plist */; };
 		19D044A82A268768007FD974 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 19D044A72A268768007FD974 /* FirebaseFirestore */; };
 		19D044AD2A26B85C007FD974 /* ReservationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D044AC2A26B85C007FD974 /* ReservationViewModel.swift */; };
-		19D044BC2A26C032007FD974 /* BarberDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D044BB2A26C032007FD974 /* BarberDetailView.swift */; };
+		19D278C92A44F10E0015FDBC /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 19D278C82A44F10E0015FDBC /* GoogleSignIn */; };
+		19D278CB2A44F10E0015FDBC /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 19D278CA2A44F10E0015FDBC /* GoogleSignInSwift */; };
+		19D278CF2A4519A30015FDBC /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D278CE2A4519A20015FDBC /* UIApplication.swift */; };
+		19F491862A661A5800B3F2F8 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F491852A661A5800B3F2F8 /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		190C4AE72A250E3E0041C299 /* BarberListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberListView.swift; sourceTree = "<group>"; };
-		190C4AF02A25CDFC0041C299 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
+		19188A362A675FDD002AFBC1 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		1983398D2A54FA3000542E2A /* BarberDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberDetailView.swift; sourceTree = "<group>"; };
 		1986DAB32A1C472000764B4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1986DAB62A1C9F0D00764B4E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		1986DAB82A1C9FDE00764B4E /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
-		198F2E3F2A3235E100B7D1A0 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		1987CA062A603BF300AF7DC3 /* BarberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberCell.swift; sourceTree = "<group>"; };
+		1987CA082A60C87300AF7DC3 /* HourButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourButton.swift; sourceTree = "<group>"; };
+		1987CA0A2A610A5600AF7DC3 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		198FC1E92A1C1A43000FDF02 /* AplicacionBarber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AplicacionBarber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		198FC1EC2A1C1A43000FDF02 /* AplicacionBarberApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AplicacionBarberApp.swift; sourceTree = "<group>"; };
 		198FC1EE2A1C1A43000FDF02 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -50,13 +56,11 @@
 		198FC2092A1C1FA6000FDF02 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		198FC20B2A1C1FD6000FDF02 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		19967E5F2A1D30E2002F9859 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
-		19967E622A1D502B002F9859 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
-		19967E642A1D5406002F9859 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
-		19ADC09A2A1E01D9008AE946 /* CircleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleList.swift; sourceTree = "<group>"; };
-		19AE85492A1C32010090DBF6 /* CustomInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputField.swift; sourceTree = "<group>"; };
+		19967E622A1D502B002F9859 /* BarberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberModel.swift; sourceTree = "<group>"; };
 		19B1AA1E2A1C251400C6212C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		19D044AC2A26B85C007FD974 /* ReservationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewModel.swift; sourceTree = "<group>"; };
-		19D044BB2A26C032007FD974 /* BarberDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberDetailView.swift; sourceTree = "<group>"; };
+		19D278CE2A4519A20015FDBC /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		19F491852A661A5800B3F2F8 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +68,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19D278CB2A44F10E0015FDBC /* GoogleSignInSwift in Frameworks */,
 				199B24872A2902D400A0FB55 /* FirebaseFirestoreSwift in Frameworks */,
+				19D278C92A44F10E0015FDBC /* GoogleSignIn in Frameworks */,
 				198FC2022A1C1DAA000FDF02 /* FirebaseAuth in Frameworks */,
 				19D044A82A268768007FD974 /* FirebaseFirestore in Frameworks */,
 			);
@@ -77,8 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				19967E5F2A1D30E2002F9859 /* ListView.swift */,
-				19ADC09A2A1E01D9008AE946 /* CircleList.swift */,
-				19967E642A1D5406002F9859 /* CircleView.swift */,
+				19F491852A661A5800B3F2F8 /* Location.swift */,
 			);
 			path = "New Group";
 			sourceTree = "<group>";
@@ -95,8 +100,8 @@
 		190C4AE62A250D0A0041C299 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				19D044BB2A26C032007FD974 /* BarberDetailView.swift */,
 				190C4AE72A250E3E0041C299 /* BarberListView.swift */,
+				1983398D2A54FA3000542E2A /* BarberDetailView.swift */,
 				190C4AED2A25191D0041C299 /* Extenciones */,
 			);
 			path = Views;
@@ -105,7 +110,8 @@
 		190C4AED2A25191D0041C299 /* Extenciones */ = {
 			isa = PBXGroup;
 			children = (
-				190C4AF02A25CDFC0041C299 /* TimeView.swift */,
+				1987CA062A603BF300AF7DC3 /* BarberCell.swift */,
+				1987CA082A60C87300AF7DC3 /* HourButton.swift */,
 			);
 			path = Extenciones;
 			sourceTree = "<group>";
@@ -129,7 +135,6 @@
 		198FC1E02A1C1A43000FDF02 = {
 			isa = PBXGroup;
 			children = (
-				19B37DC62A27A42400A5BC8B /* Firebase */,
 				190C4AE52A250CD60041C299 /* Bookings */,
 				190C4AE42A2507FA0041C299 /* New Group */,
 				19967E612A1D5003002F9859 /* Model */,
@@ -186,6 +191,7 @@
 				198FC2052A1C1F54000FDF02 /* LoginView.swift */,
 				198FC2072A1C1F8D000FDF02 /* SignUpView.swift */,
 				198FC2092A1C1FA6000FDF02 /* ForgotPasswordView.swift */,
+				19D278CE2A4519A20015FDBC /* UIApplication.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,7 +199,6 @@
 		198FC20D2A1C202C000FDF02 /* Extenciones */ = {
 			isa = PBXGroup;
 			children = (
-				19AE85492A1C32010090DBF6 /* CustomInputField.swift */,
 				1986DAB82A1C9FDE00764B4E /* DateView.swift */,
 			);
 			path = Extenciones;
@@ -202,17 +207,11 @@
 		19967E612A1D5003002F9859 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				19967E622A1D502B002F9859 /* Models.swift */,
+				19967E622A1D502B002F9859 /* BarberModel.swift */,
+				1987CA0A2A610A5600AF7DC3 /* HomeModel.swift */,
+				19188A362A675FDD002AFBC1 /* LocationModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		19B37DC62A27A42400A5BC8B /* Firebase */ = {
-			isa = PBXGroup;
-			children = (
-				198F2E3F2A3235E100B7D1A0 /* FirebaseManager.swift */,
-			);
-			path = Firebase;
 			sourceTree = "<group>";
 		};
 		19D044A62A268768007FD974 /* Frameworks */ = {
@@ -250,6 +249,8 @@
 				198FC2012A1C1DAA000FDF02 /* FirebaseAuth */,
 				19D044A72A268768007FD974 /* FirebaseFirestore */,
 				199B24862A2902D400A0FB55 /* FirebaseFirestoreSwift */,
+				19D278C82A44F10E0015FDBC /* GoogleSignIn */,
+				19D278CA2A44F10E0015FDBC /* GoogleSignInSwift */,
 			);
 			productName = AplicacionBarber;
 			productReference = 198FC1E92A1C1A43000FDF02 /* AplicacionBarber.app */;
@@ -281,6 +282,9 @@
 			mainGroup = 198FC1E02A1C1A43000FDF02;
 			packageReferences = (
 				198FC1FC2A1C1DAA000FDF02 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				19D278C72A44F10E0015FDBC /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				199A43252A635E380047C647 /* XCRemoteSwiftPackageReference "CalendarKit" */,
+				199A432A2A6372CB0047C647 /* XCRemoteSwiftPackageReference "DateGrid" */,
 			);
 			productRefGroup = 198FC1EA2A1C1A43000FDF02 /* Products */;
 			projectDirPath = "";
@@ -309,23 +313,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				190C4AF12A25CDFC0041C299 /* TimeView.swift in Sources */,
 				198FC2062A1C1F54000FDF02 /* LoginView.swift in Sources */,
 				198FC1EF2A1C1A43000FDF02 /* ContentView.swift in Sources */,
 				19967E602A1D30E2002F9859 /* ListView.swift in Sources */,
-				19AE854A2A1C32010090DBF6 /* CustomInputField.swift in Sources */,
 				198FC20C2A1C1FD6000FDF02 /* AuthenticationViewModel.swift in Sources */,
+				19F491862A661A5800B3F2F8 /* Location.swift in Sources */,
 				198FC1ED2A1C1A43000FDF02 /* AplicacionBarberApp.swift in Sources */,
+				1987CA072A603BF300AF7DC3 /* BarberCell.swift in Sources */,
+				19D278CF2A4519A30015FDBC /* UIApplication.swift in Sources */,
 				1986DAB72A1C9F0D00764B4E /* HomeView.swift in Sources */,
+				1987CA092A60C87300AF7DC3 /* HourButton.swift in Sources */,
+				19188A372A675FDD002AFBC1 /* LocationModel.swift in Sources */,
 				1986DAB92A1C9FDE00764B4E /* DateView.swift in Sources */,
-				19ADC09B2A1E01D9008AE946 /* CircleList.swift in Sources */,
+				1983398E2A54FA3000542E2A /* BarberDetailView.swift in Sources */,
 				198FC20A2A1C1FA6000FDF02 /* ForgotPasswordView.swift in Sources */,
-				19D044BC2A26C032007FD974 /* BarberDetailView.swift in Sources */,
-				198F2E402A3235E100B7D1A0 /* FirebaseManager.swift in Sources */,
 				19D044AD2A26B85C007FD974 /* ReservationViewModel.swift in Sources */,
 				198FC2082A1C1F8D000FDF02 /* SignUpView.swift in Sources */,
-				19967E652A1D5406002F9859 /* CircleView.swift in Sources */,
-				19967E632A1D502B002F9859 /* Models.swift in Sources */,
+				1987CA0B2A610A5600AF7DC3 /* HomeModel.swift in Sources */,
+				19967E632A1D502B002F9859 /* BarberModel.swift in Sources */,
 				190C4AE82A250E3E0041C299 /* BarberListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -549,6 +554,30 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		199A43252A635E380047C647 /* XCRemoteSwiftPackageReference "CalendarKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/richardtop/CalendarKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		199A432A2A6372CB0047C647 /* XCRemoteSwiftPackageReference "DateGrid" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yodagamaheshan/DateGrid.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.3;
+			};
+		};
+		19D278C72A44F10E0015FDBC /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -566,6 +595,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 198FC1FC2A1C1DAA000FDF02 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		19D278C82A44F10E0015FDBC /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 19D278C72A44F10E0015FDBC /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		19D278CA2A44F10E0015FDBC /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 19D278C72A44F10E0015FDBC /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

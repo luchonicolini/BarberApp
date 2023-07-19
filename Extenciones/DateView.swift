@@ -18,8 +18,6 @@ struct DateView: View {
                 .fontWeight(.medium)
                 .opacity(0.7)
             
-            Text(launcher)
-                .font(.largeTitle).bold()
         }
         .onAppear() {
             date =

@@ -8,16 +8,34 @@
 import SwiftUI
 
 struct ContentView: View {
+    init() {
+        UITabBar.appearance().barTintColor = UIColor(Color("TabBarColor"))
+    }
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        TabView {
+            HomeView(items: Items.sampleData)
+                .tabItem {
+                    Image(systemName: "house.fill")
+                    Text("Inicio")
+                }
+            
+            Text("Segunda vista")
+                .tabItem {
+                    Image(systemName: "bell.fill")
+                    Text("Notificaciones")
+                }
+            
+            Text("Tercera vista")
+                .tabItem {
+                    Image(systemName: "person.fill")
+                    Text("Perfil")
+                }
         }
-        .padding()
     }
 }
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

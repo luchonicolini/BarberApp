@@ -16,7 +16,7 @@ struct AplicacionBarber: App {
   var body: some Scene {
     WindowGroup {
       NavigationStack {
-          LoginView()
+          HomeView(items: Items.sampleData)
               .environmentObject(authenticationViewModel)
       }
       .environmentObject(authenticationViewModel)
