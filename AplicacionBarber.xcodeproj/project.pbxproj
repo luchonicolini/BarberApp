@@ -25,6 +25,8 @@
 		198FC20A2A1C1FA6000FDF02 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198FC2092A1C1FA6000FDF02 /* ForgotPasswordView.swift */; };
 		198FC20C2A1C1FD6000FDF02 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198FC20B2A1C1FD6000FDF02 /* AuthenticationViewModel.swift */; };
 		199003652A6887330092E526 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199003642A6887330092E526 /* MapView.swift */; };
+		199315B72A69D92A008D6319 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199315B62A69D92A008D6319 /* GalleryView.swift */; };
+		199315B92A69DA86008D6319 /* GaleriaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199315B82A69DA86008D6319 /* GaleriaModel.swift */; };
 		19967E602A1D30E2002F9859 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19967E5F2A1D30E2002F9859 /* ListView.swift */; };
 		19967E632A1D502B002F9859 /* BarberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19967E622A1D502B002F9859 /* BarberModel.swift */; };
 		199B24872A2902D400A0FB55 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 199B24862A2902D400A0FB55 /* FirebaseFirestoreSwift */; };
@@ -57,6 +59,8 @@
 		198FC2092A1C1FA6000FDF02 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		198FC20B2A1C1FD6000FDF02 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		199003642A6887330092E526 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		199315B62A69D92A008D6319 /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
+		199315B82A69DA86008D6319 /* GaleriaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleriaModel.swift; sourceTree = "<group>"; };
 		19967E5F2A1D30E2002F9859 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		19967E622A1D502B002F9859 /* BarberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberModel.swift; sourceTree = "<group>"; };
 		19B1AA1E2A1C251400C6212C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				1986DAB62A1C9F0D00764B4E /* HomeView.swift */,
+				199315B62A69D92A008D6319 /* GalleryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 				19967E622A1D502B002F9859 /* BarberModel.swift */,
 				1987CA0A2A610A5600AF7DC3 /* HomeModel.swift */,
 				19188A362A675FDD002AFBC1 /* LocationModel.swift */,
+				199315B82A69DA86008D6319 /* GaleriaModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -323,9 +329,11 @@
 				19F491862A661A5800B3F2F8 /* Location.swift in Sources */,
 				198FC1ED2A1C1A43000FDF02 /* AplicacionBarberApp.swift in Sources */,
 				1987CA072A603BF300AF7DC3 /* BarberCell.swift in Sources */,
+				199315B72A69D92A008D6319 /* GalleryView.swift in Sources */,
 				19D278CF2A4519A30015FDBC /* UIApplication.swift in Sources */,
 				1986DAB72A1C9F0D00764B4E /* HomeView.swift in Sources */,
 				1987CA092A60C87300AF7DC3 /* HourButton.swift in Sources */,
+				199315B92A69DA86008D6319 /* GaleriaModel.swift in Sources */,
 				19188A372A675FDD002AFBC1 /* LocationModel.swift in Sources */,
 				1986DAB92A1C9FDE00764B4E /* DateView.swift in Sources */,
 				1983398E2A54FA3000542E2A /* BarberDetailView.swift in Sources */,
