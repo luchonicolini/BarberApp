@@ -27,9 +27,8 @@ extension Items {
     static let sampleData: [Items] =
     [
         Items(image: "img", title: "Reservar", imgColor: .blue),
+        Items(image: "img3", title: "Galeria", imgColor: .yellow),
         Items(image: "img2", title: "asdasd", imgColor: .red),
-        Items(image: "img3", title: "asdasd", imgColor: .yellow),
-        Items(image: "img4", title: "asdasd", imgColor: .orange),
         Items(image: "img5", title: "Ubicación", imgColor: .green),
         
        

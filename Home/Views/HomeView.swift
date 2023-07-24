@@ -20,29 +20,31 @@ struct HomeView: View {
             return AnyView(BarberListView(barbers: Barber.sampleData))
         case "Ubicación":
             return AnyView(Location())
+        case "Galeria":
+            return AnyView(GalleryView())
         default:
             return AnyView(Text("Vista no implementada"))
         }
     }
-
+    
     
     var body: some View {
         NavigationStack {
             ScrollView(showsIndicators: false) {
-                headerView()
-                
+                HeaderView()
+                    
                 LazyVGrid(columns: colums, spacing: spacing ) {
                     ForEach(items) { item in
                         NavigationLink(destination: getViewForItem(item)) {
                             ItemView(items: item)
                         }
-                        .buttonStyle(PlainButtonStyle())
+                        .buttonStyle(ItemButtonStyle(cornerRadius: 10))
                     }
                 }
                 .padding(.horizontal)
                 .offset(y: -50)
             }
-            .navigationBarTitle("Jacquet’s")
+            //.navigationBarTitle("Jacquet’s")
             .background(Color.white)
             .ignoresSafeArea()
             
@@ -103,30 +105,39 @@ struct ItemView: View {
             
         }
         .frame(height: 150)
-        .clipShape(RoundedRectangle(cornerRadius: 20))
-        .shadow(color: Color.black.opacity(0.2), radius: 10, y: 5)
+        //        .clipShape(RoundedRectangle(cornerRadius: 20))
+        //        .shadow(color: Color.black.opacity(0.2), radius: 10, y: 5)
     }
 }
 
-struct headerView: View {
+struct HeaderView: View {
     var body: some View {
         VStack {
             VStack(spacing: 20) {
-           
+                
+                Text("Jacquet’s")
+                    .font(.system(size: 33, design: .rounded))
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
+                
                 Divider()
                     .overlay(Color("Decoracion"))
                     .frame(height: 1)
                     .opacity(0.4)
                     .padding(.horizontal, 20)
-           
+                
+                
             }
-            .padding(.top, 90)
+            .padding(.top, 40)
             
             Text("Servicios")
                 .font(.title)
                 .fontWeight(.bold)
+                .fontDesign(.rounded)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.horizontal)
+                .padding(.horizontal, 20)
             
             
         }
@@ -134,6 +145,21 @@ struct headerView: View {
         .frame(maxWidth: .infinity)
         .background(Color("Background"))
         .clipShape(CustomShape(corner: [.bottomLeft,.bottomRight], radii: 10))
+    }
+}
+
+struct ItemButtonStyle: ButtonStyle {
+    let cornerRadius: CGFloat
+    
+    func makeBody(configuration: Configuration) -> some View {
+        ZStack {
+            configuration.label
+            if configuration.isPressed {
+                Color.black.opacity(0.2)
+            }
+        }
+        .clipShape(RoundedRectangle(cornerRadius: 20))
+        .shadow(color: Color.black.opacity(0.2), radius: 10, y: 5)
     }
 }
 
