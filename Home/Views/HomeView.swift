@@ -17,7 +17,7 @@ struct HomeView: View {
     func getViewForItem(_ item: Items) -> some View {
         switch item.title {
         case "Reservar":
-            return AnyView(BarberListView(barbers: Barber.sampleData))
+            return AnyView(BarberListView())
         case "Ubicación":
             return AnyView(Location())
         case "Galeria":
@@ -42,11 +42,13 @@ struct HomeView: View {
                     }
                 }
                 .padding(.horizontal)
-                .offset(y: -50)
+                .offset(y: -60)
             }
-            //.navigationBarTitle("Jacquet’s")
-            .background(Color.white)
+           // .navigationBarTitle("Jacquet’s")
+            .background(Color("Color"))
             .ignoresSafeArea()
+            
+            
             
         }
     }
@@ -101,7 +103,7 @@ struct ItemView: View {
                     .foregroundColor(Color.black.opacity(0.9))
             }
             .frame(width: reader.size.width, height: reader.size.height)
-            .background(Color.white)
+            .background(Color("Color"))
             
         }
         .frame(height: 150)
@@ -128,20 +130,21 @@ struct HeaderView: View {
                     .opacity(0.4)
                     .padding(.horizontal, 20)
                 
+                Text("Servicios")
+                    .font(.system(size: 26, design: .rounded))
+                    .fontWeight(.bold)
+                    .fontDesign(.rounded)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 20)
+                   
                 
             }
-            .padding(.top, 40)
+            .padding(.top, 20)
             
-            Text("Servicios")
-                .font(.title)
-                .fontWeight(.bold)
-                .fontDesign(.rounded)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.horizontal, 20)
-            
-            
+        
+
         }
-        .frame(height: 250)
+        .frame(height: 280)
         .frame(maxWidth: .infinity)
         .background(Color("Background"))
         .clipShape(CustomShape(corner: [.bottomLeft,.bottomRight], radii: 10))

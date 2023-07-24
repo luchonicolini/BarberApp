@@ -26,18 +26,7 @@ struct BarberCell: View {
                     .font(.headline)
             
             Spacer()
-            if viewModel.favoriteBarbers[barber.id] ?? false {
-                Image(systemName: "star.fill")
-                    .foregroundColor(.yellow)
-                    .onTapGesture {
-                        viewModel.toggleFavorite(barber: barber)
-                    }
-            } else {
-                Image(systemName: "star")
-                    .onTapGesture {
-                        viewModel.toggleFavorite(barber: barber)
-                    }
-            }
+        
         }
         .padding()
     }

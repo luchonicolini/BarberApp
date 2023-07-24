@@ -10,12 +10,9 @@ import SwiftUI
 struct BarberListView: View {
     @StateObject var viewModel = ReservationViewModel()
     @State private var searchTerm = ""
-    let barbers: [Barber]
-    
-    @State private var showFavoritesOnly = false
 
     var filteredBarbers: [Barber] {
-        barbers.filter { barber in
+        viewModel.barbers.filter { barber in
             searchTerm.isEmpty || barber.name.localizedCaseInsensitiveContains(searchTerm)
         }
     }
@@ -31,6 +28,8 @@ struct BarberListView: View {
                      }
                  }
              }
+             .onAppear(perform: viewModel.fetchBarbers)
+
             .navigationTitle("Barberos")
             .navigationBarTitleDisplayMode(.large)
             .searchable(text: $searchTerm, prompt: "Buscar barbero")
@@ -39,9 +38,10 @@ struct BarberListView: View {
 }
 
 
+
 struct BarberListView_Previews: PreviewProvider {
     static var previews: some View {
-        BarberListView(barbers: Barber.sampleData)
+        BarberListView()
     }
 }
 

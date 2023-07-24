@@ -10,6 +10,8 @@
 		190C4AE82A250E3E0041C299 /* BarberListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190C4AE72A250E3E0041C299 /* BarberListView.swift */; };
 		19188A372A675FDD002AFBC1 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19188A362A675FDD002AFBC1 /* LocationModel.swift */; };
 		1983398E2A54FA3000542E2A /* BarberDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1983398D2A54FA3000542E2A /* BarberDetailView.swift */; };
+		1984D7DA2A6F05E8003E232F /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 1984D7D92A6F05E8003E232F /* FirebaseDatabase */; };
+		1984D7DC2A6F1CEA003E232F /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1984D7DB2A6F1CEA003E232F /* FirebaseDatabaseSwift */; };
 		1986DAB72A1C9F0D00764B4E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1986DAB62A1C9F0D00764B4E /* HomeView.swift */; };
 		1986DAB92A1C9FDE00764B4E /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1986DAB82A1C9FDE00764B4E /* DateView.swift */; };
 		1987CA072A603BF300AF7DC3 /* BarberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1987CA062A603BF300AF7DC3 /* BarberCell.swift */; };
@@ -74,6 +76,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1984D7DC2A6F1CEA003E232F /* FirebaseDatabaseSwift in Frameworks */,
+				1984D7DA2A6F05E8003E232F /* FirebaseDatabase in Frameworks */,
 				19D278CB2A44F10E0015FDBC /* GoogleSignInSwift in Frameworks */,
 				199B24872A2902D400A0FB55 /* FirebaseFirestoreSwift in Frameworks */,
 				19D278C92A44F10E0015FDBC /* GoogleSignIn in Frameworks */,
@@ -260,6 +264,8 @@
 				199B24862A2902D400A0FB55 /* FirebaseFirestoreSwift */,
 				19D278C82A44F10E0015FDBC /* GoogleSignIn */,
 				19D278CA2A44F10E0015FDBC /* GoogleSignInSwift */,
+				1984D7D92A6F05E8003E232F /* FirebaseDatabase */,
+				1984D7DB2A6F1CEA003E232F /* FirebaseDatabaseSwift */,
 			);
 			productName = AplicacionBarber;
 			productReference = 198FC1E92A1C1A43000FDF02 /* AplicacionBarber.app */;
@@ -593,6 +599,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1984D7D92A6F05E8003E232F /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 198FC1FC2A1C1DAA000FDF02 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		1984D7DB2A6F1CEA003E232F /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 198FC1FC2A1C1DAA000FDF02 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
 		198FC2012A1C1DAA000FDF02 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 198FC1FC2A1C1DAA000FDF02 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
