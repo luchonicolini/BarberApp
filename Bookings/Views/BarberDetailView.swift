@@ -8,13 +8,24 @@
 import SwiftUI
 
 struct BarberDetailView: View {
+    var barber: Barber
     @State private var selectedDate = Date()
+    @State private var showError = false
+
     @EnvironmentObject var reservationViewModel: ReservationViewModel
     
     let columns = [
         GridItem(.adaptive(minimum: 60))
     ]
-    
+
+    func isWorkingDay(date: Date) -> Bool {
+        let calendar = Calendar.current
+        if let weekday = calendar.dateComponents([.weekday], from: date).weekday {
+            return barber.workingDays.contains(weekday)
+        }
+        return false
+    }
+
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
@@ -22,10 +33,23 @@ struct BarberDetailView: View {
                     DatePicker("Fecha", selection: $selectedDate, in: Date()..., displayedComponents: .date)
                         .datePickerStyle(.graphical)
                         .padding()
-                        //.accentColor(.blue)
+                        .onChange(of: selectedDate) { newDate in
+                            if !isWorkingDay(date: newDate) {
+                                showError = true
+                            } else {
+                                showError = false
+                            }
+                        }
+                    if showError {
+                        Text("El barbero no está disponible en la fecha seleccionada.")
+                            .foregroundColor(.red)
+                            .padding()
+                    }
                     Divider().background(Color.gray)
-                       // .frame(height: 2)
-                       
+                    //
+                    
+                    
+                
                 }
                 .padding()
             }
@@ -36,11 +60,14 @@ struct BarberDetailView: View {
 }
 
 
+
 struct BarberDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        BarberDetailView()
+        BarberDetailView(barber: Barber.sampleData[0])
+            .environmentObject(ReservationViewModel())
     }
 }
+
 
 
 

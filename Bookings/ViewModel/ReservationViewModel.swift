@@ -24,9 +24,11 @@ class ReservationViewModel: ObservableObject {
         barberRef.setValue([
             "imageName": barber.imageName,
             "name": barber.name,
-            "description": barber.description
-        ])
+            "description": barber.description,
+            "workingDays": barber.workingDays  
+        ] as [String : Any])
     }
+
     
     // Función para obtener los Barberos
     func fetchBarbers() {
@@ -63,7 +65,8 @@ extension Barber {
         guard let value = snapshot.value as? [String: AnyObject],
               let imageName = value["imageName"] as? String,
               let name = value["name"] as? String,
-              let description = value["description"] as? String else {
+              let description = value["description"] as? String,
+              let workingDays = value["workingDays"] as? [Int] else {
             return nil
         }
         
@@ -71,9 +74,9 @@ extension Barber {
         self.imageName = imageName
         self.name = name
         self.description = description
+        self.workingDays = workingDays
     }
 }
-
 
 
 

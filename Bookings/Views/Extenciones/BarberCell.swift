@@ -10,6 +10,7 @@ import SwiftUI
 struct BarberCell: View {
     @ObservedObject var viewModel: ReservationViewModel
     let barber: Barber
+    var selectedDate: Date
 
     var body: some View {
         HStack {
@@ -20,17 +21,33 @@ struct BarberCell: View {
                 .clipShape(Circle())
                 .overlay {
                     Circle().stroke(.gray, lineWidth: 0.5)
-                            }
+                }
             
+            VStack(alignment: .leading) {
                 Text(barber.name)
                     .font(.headline)
+                Text(isBarberAvailable(on: selectedDate) ? "Disponible" : "No Disponible")
+                    .font(.caption)
+                    .foregroundColor(isBarberAvailable(on: selectedDate) ? .green : .red)
+            }
             
             Spacer()
-        
         }
         .padding()
     }
+    
+    func isBarberAvailable(on date: Date) -> Bool {
+        let calendar = Calendar.current
+    
+        guard let weekday = calendar.dateComponents([.weekday], from: date).weekday else {
+            return false
+        }
+        
+        return barber.workingDays.contains(weekday)
+    }
+
 }
+
 
 
 struct BarberCell_Previews: PreviewProvider {
@@ -40,11 +57,12 @@ struct BarberCell_Previews: PreviewProvider {
 
     static var previews: some View {
         Group {
-            BarberCell(viewModel: viewModel, barber: barber)
-            BarberCell(viewModel: viewModel, barber: barbeer)
+            BarberCell(viewModel: viewModel, barber: barber, selectedDate: Date())
+            BarberCell(viewModel: viewModel, barber: barbeer, selectedDate: Date())
         }
         .previewLayout(.fixed(width: 300, height: 70))
     }
 }
+
 
 
