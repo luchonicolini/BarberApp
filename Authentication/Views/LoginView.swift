@@ -49,7 +49,7 @@ struct LoginView: View {
                     Image("logo1")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(minHeight: 300, maxHeight: 400)
+                        .frame(minHeight: 200, maxHeight: 300)
                     Text("Login")
                         .font(.largeTitle)
                         .fontWeight(.bold)
@@ -128,17 +128,20 @@ struct LoginView: View {
                 .foregroundColor(colorScheme == .dark ? .white : .black)
                 .buttonStyle(.bordered)
                 
-                HStack {
-                    Text("¿No tienes una cuenta?")
-                    NavigationLink(destination: SignupView()) {
-                        Text("Regístrate")
-                            .fontWeight(.semibold)
-                            .foregroundColor(.blue)
-                    }
+                NavigationLink(destination: SignupView()) {
+                    Text("Regístrate con Email")
+                        .padding(.vertical, 8)
+                        .frame(maxWidth: .infinity)
+                        .background(alignment: .leading) {
+                            Image(systemName: "envelope")
+                                .font(.title2)
+                                .frame(width: 30, alignment: .center)
+                        }
                 }
-                //.padding([.top, .bottom], 50)
-                .padding(.vertical, 12)
-                .frame(maxWidth: .infinity)
+                .foregroundColor(colorScheme == .dark ? .white : .black)
+                .buttonStyle(.bordered)
+                .padding(.top, 12)
+                
                 
             }
         }

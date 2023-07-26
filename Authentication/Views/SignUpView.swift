@@ -38,7 +38,8 @@ struct SignupView: View {
                     Image("logo1")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(minHeight: 300, maxHeight: 400)
+                    //.frame(minHeight: 300, maxHeight: 400)
+                        .frame(minHeight: 200, maxHeight: 300)
                     Text("Sign up")
                         .font(.largeTitle)
                         .fontWeight(.bold)
@@ -115,17 +116,31 @@ struct SignupView: View {
                     .buttonStyle(.borderedProminent)
                     .accessibilityLabel(viewModel.authenticationState != .authenticating ? "Registrarse" : "Cargando") // Etiqueta de accesibilidad
                     
-                    HStack {
-                        Text("¿Ya tienes una cuenta?")
-                            .multilineTextAlignment(.center)
-                        NavigationLink(destination: LoginView()) {
-                            Text("Iniciar sesión")
-                                .fontWeight(.semibold)
-                                .foregroundColor(.blue)
+                    VStack(spacing: 6) {
+                        HStack {
+                            Text("¿Ya tienes una cuenta?")
+                                .multilineTextAlignment(.center)
+                            NavigationLink(destination: LoginView()) {
+                                Text("Iniciar sesión")
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.blue)
+                            }
+                        }
+                        
+                        HStack {
+                            Text("¿Olvidaste tu contraseña?")
+                                .multilineTextAlignment(.center)
+                            NavigationLink(destination: ForgotPasswordView()) {
+                                Text("Recuperar")
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.blue)
+                            }
                         }
                     }
                     .padding(.vertical, 12)
                     .frame(maxWidth: .infinity)
+
+                    
                 }
                 .onAppear {
                     viewModel.reset()
@@ -144,18 +159,18 @@ struct SignupView: View {
         }
     }
 }
-    
-    
-    
-    struct SignupView_Previews: PreviewProvider {
-        static var previews: some View {
-            Group {
-                SignupView()
-                    .preferredColorScheme(.dark)
-                    .environmentObject(AuthenticationViewModel())
-            }
+
+
+
+struct SignupView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            SignupView()
+                .preferredColorScheme(.dark)
+                .environmentObject(AuthenticationViewModel())
         }
     }
-    
-    
-    
+}
+
+
+

@@ -29,8 +29,7 @@ extension Barber {
     [
         Barber(imageName: "peluquero1", name: "Luciano Nicolini", description: "reserva3reserva3", workingDays: [2, 3, 4, 5, 6, 7]),
         Barber(imageName: "peluquero2", name: "Raul Gonzales", description: "reserva3reserva3", workingDays: [2, 3, 4, 5, 6, 7]),
-        Barber(imageName: "peluquero3", name: "Luciano Nicolini", description: "reserva3reserva3", workingDays: [1, 2, 3, 4, 5]),
-        Barber(imageName: "peluquero2", name: "Raul Gonzales", description: "reserva3reserva3", workingDays: [2, 3, 4, 6])
+
     ]
 }
 
